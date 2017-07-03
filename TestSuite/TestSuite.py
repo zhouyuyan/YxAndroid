@@ -14,7 +14,7 @@ from Common.yunxiCommon import writeLog
 
 def creatsuite():
     testunit = unittest.TestSuite()
-    test_dir = 'D:\\workspace\\yunxiTestCase\\TestCase'
+    test_dir = 'D:\\workspace\\YxAndroid\\TestCase'
     discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py', top_level_dir=None)
     for testcase in discover:
         testunit.addTests(testcase)
@@ -23,14 +23,14 @@ def creatsuite():
 
 # 生成测试报告
 now = time.strftime('%Y-%m-%d_%H-%M-%S')
-filename = 'D:\\workspace\\yunxiTestCase\\report\\html\\' + now + '.html'
+filename = 'D:\\workspace\\YxAndroid\\report\\' + now + '.html'
 fp = open(filename, 'wb')
 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'yunxizhibo_Android测试报告' + now, description=u'测试结果')
 
 
 def sendreport():
     # 获取最新的报告
-    report_dir = 'D:\\workspace\\yunxiTestCase\\report\\html\\'
+    report_dir = 'D:\\workspace\\YxAndroid\\report\\'
     lists = os.listdir(report_dir)
     lists.sort()
     file_new = os.path.join(report_dir, lists[-1])

@@ -3,12 +3,7 @@
 # Created by zhouyuyan on 2017/5/19 14:34
 import unittest
 from random import choice
-
-from appium import webdriver as appdriver
-
 from Common import InitDriver
-from Common.Element import *
-from Common.action import ElementActions
 from Common.yunxiCommon import *
 from utils import L
 
@@ -95,9 +90,12 @@ class Home(unittest.TestCase):
         self.pinglun()
 
     def test_lefttolist(self):
+        """测试首页tab左滑动"""
         self.list_to_left()
 
     def test_downtolist(self):
+        """测试首页下拉刷新&&上拉加载更多"""
+
         self.list_to_more()
 
     # def test_g(self):
@@ -211,9 +209,10 @@ class Home(unittest.TestCase):
 
     def list_to_more(self):
         sleep(2)
-        swip_down(self, count=1)
+        action.swip_down(count=1)
         print('swip_down')
-        swip_up(self, count=100, method=is_text_displayed(self, "没有更多了"))
+        # swip_up(self, count=100, method=is_text_displayed(self, "没有更多了"))
+        action.swip_up(count=100, method=action.is_text_displayed("没有更多了"))
 
         print('swip_up')
 

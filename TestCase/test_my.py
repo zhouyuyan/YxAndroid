@@ -69,7 +69,7 @@ class My(unittest.TestCase):
             feedback = get_xpath(self, "//android.widget.EditText[@text='请简要描述您的问题和意见']")
             re = lambda action: action.is_element_displayed(feedback)
             if re:
-                feedback.send_keys("hahhahahahahahahahhahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                feedback.send_keys("我就随便输入一下哈哈哈")
                 sleep(1)
             get_xpath(self, "//android.widget.EditText[@text='请留下邮箱方便我们联系您']").send_keys("11@qq.com")
             sleep(1)

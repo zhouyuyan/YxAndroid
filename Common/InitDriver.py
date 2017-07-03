@@ -4,7 +4,6 @@
 from appium import webdriver
 import time
 import requests
-
 from utils.environment import Environment
 
 env = Environment().get_environment_info()

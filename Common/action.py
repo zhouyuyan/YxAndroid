@@ -173,7 +173,7 @@ class ElementActions:
                     pass
 
     def swip_up(self, count=1, method=None):
-        """向上滑动,常用于上拉加载
+        """向上滑动,常用于上拉加载更多
 
         Args:
             count: 滑动次数
@@ -370,28 +370,6 @@ class ElementActions:
             self.driver.press_keycode(8 + int(num))
         elif arg in event_list:
             self.driver.press_keycode(int(event_list[arg]))
-
-    """""封装查找元素及自动等待方法"""""
-
-    # def get_id(self, id):
-    #     element = self.driver.find_element_by_id(id)
-    #     return element
-    #
-    # def get_name(self, name):
-    #     element = self.driver.find_element_by_name(name)
-    #     return element
-    #
-    # def get_xpath(self, xpath):
-    #     element = self.driver.find_element_by_xpath(xpath)
-    #     return element
-    #
-    # def get_classes(self, classesname):
-    #     elements = self.driver.find_elements_by_class_name(classesname)
-    #     return elements
-    #
-    # def get_ids(self, ids):
-    #     elements = self.driver.find_elements_by_id(ids)
-    #     return elements
 
     def over(self):
         element = self.driver.quit()
